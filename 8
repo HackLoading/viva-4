@@ -1,0 +1,12 @@
+Docker 8
+
+docker pull ubuntu
+docker run -it ubuntu
+# Inside container:
+echo "Hello from Docker Ubuntu!" > /hello.txt
+exit
+
+docker ps -a
+docker commit <container_id> atharva2303/ubuntu-with-file
+docker tag <image_id> atharva2303/ubuntu-with-file:latest
+docker push atharva2303/ubuntu-with-file:latest
