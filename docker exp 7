@@ -1,0 +1,25 @@
+docker exp 7
+
+my-php-app/
+├── index.php
+└── Dockerfile
+
+index.php
+
+<?php
+echo "Hello from Dockerized PHP!";
+?>
+
+Dockerfile
+
+FROM php:8.2-apache
+COPY index.php /var/www/html/
+
+docker login
+docker build -t atharva2303/my-php-app .
+docker push your_dockerhub_username/my-php-app
+docker run -d -p 8080:80 your_dockerhub_username/my-php-app
+
+
+
+
